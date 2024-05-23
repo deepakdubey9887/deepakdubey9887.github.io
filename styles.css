@@ -55,12 +55,19 @@ nav ul li a:hover {
 }
 
 #hero {
-    background-image: url(Gemini_Generated_Image.jpg);
+    background-image: url('Gemini_Generated_Image.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
     text-align: center;
     padding: 100px 0;
+    animation: heroAnimation 5s infinite;
+}
+
+@keyframes heroAnimation {
+    0% { background-position: center top; }
+    50% { background-position: center bottom; }
+    100% { background-position: center top; }
 }
 
 .hero-content {
@@ -91,6 +98,12 @@ section h2 {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     padding: 40px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 footer {
