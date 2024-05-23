@@ -6,12 +6,13 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #f8f8f8;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 header {
@@ -19,12 +20,16 @@ header {
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
 }
 
 .logo {
@@ -38,6 +43,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin: 0;
 }
 
 nav ul li {
@@ -54,20 +60,23 @@ nav ul li a:hover {
     color: #ffc107;
 }
 
-#hero {
-    background-image: url('Gemini_Generated_Image.jpg');
-    background-size: cover;
-    background-position: center;
+.resume-link {
     color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    animation: heroAnimation 5s infinite;
+    font-size: 20px;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-@keyframes heroAnimation {
-    0% { background-position: center top; }
-    50% { background-position: center bottom; }
-    100% { background-position: center top; }
+.resume-link:hover {
+    color: #ffc107;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #333, #555);
+    color: #f8f8f8;
+    text-align: center;
+    padding: 100px 0;
+    transition: background 0.3s;
 }
 
 .hero-content {
@@ -84,34 +93,50 @@ nav ul li a:hover {
     font-size: 24px;
 }
 
-section {
-    padding: 60px 0;
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 0;
 }
 
-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.section.centered {
+    justify-content: center;
 }
 
-#about {
-    background-color: #333;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-footer {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 20px 0;
+.card, .project-card {
+    flex: 1 1 calc(50% - 20px);
+    background: #333;
+    color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
     text-align: center;
 }
+
+.project-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1;
+}
+
+.card h2, .project-card h3 {
+    text-align: center;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+
 .certification-link {
     display: inline-block;
     padding: 10px 20px;
@@ -124,7 +149,64 @@ footer {
 }
 
 .certification-link:hover {
-    background-color: #e0a800;
-    color: #fff;
+    background-color: #333;
+    color: #ffc107;
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Updated CSS for Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skills-card {
+    flex: 1;
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3 i {
+    margin-right: 10px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #555;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 5px;
+}
+
+.progress {
+    background-color: #ffc107;
+    height: 100%;
+    border-radius: 20px;
+}
